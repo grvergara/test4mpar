@@ -14,7 +14,7 @@ The `cdk.json` file tells the CDK Toolkit how to execute your app.
 * `npx cdk synth`   emits the synthesized CloudFormation template
 
 
-## Test for J from Mer.
+## My Notes.
 
 
 First, install aws-cli on your laptop, then cdk-cli with npm. 
@@ -49,9 +49,10 @@ https://epu8pa0gh3.execute-api.us-west-2.amazonaws.com/prod/
 SSM parameter manager seems to me a good solution, considering elapse time to set a
 new value - about 3 seconds on my trials - and (almost) inmediate refresh.
 
-Other options ?
+## Other options ?
 The parameter could be stored in some database like PostgreSQL on RDS or DynamoDB, 
 but this would be an overkill and create new and unnecesary cost.
 With SSM, at zero cost you can store up to 10K parameter per region with a max lenght
 of 4K characters. 
+
 So SSM Parameter Manager is in this case the best option to me. 
