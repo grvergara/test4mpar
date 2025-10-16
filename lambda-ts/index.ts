@@ -55,7 +55,7 @@ export const handler = async (
     <div class="container">
         <h1>The saved string is ${dynamicString}</h1>
         <div class="footer">
-            Powered by AWS Lambda + API Gateway + SSM Parameter Store
+            Made with 🧠 assisted by 🤖	.
         </div>
     </div>
 </body>
