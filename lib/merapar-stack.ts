@@ -1,9 +1,10 @@
 import * as cdk from 'aws-cdk-lib';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
+import { aws_lambda_nodejs } from 'aws-cdk-lib';
 import * as apigateway from 'aws-cdk-lib/aws-apigateway';
 import * as ssm from 'aws-cdk-lib/aws-ssm';
 import * as iam from 'aws-cdk-lib/aws-iam';
-
+import { NodejsFunction } from 'aws-cdk-lib/aws-lambda-nodejs';
 
 import { Construct } from 'constructs';
 // import * as sqs from 'aws-cdk-lib/aws-sqs';
@@ -31,7 +32,7 @@ export class MeraparStack extends cdk.Stack {
     const webLambda = new lambda.Function(this, 'WebLambda', {
       runtime: lambda.Runtime.NODEJS_22_X,
       handler: 'index.handler',
-      code: lambda.Code.fromAsset(path.join(__dirname, '../lambda-handler')) ,
+      code: lambda.Code.fromAsset(path.join(__dirname, '../lambda-ts')) ,
       environment: {
         PARAMETER_NAME: dynamicStringParam.parameterName,
       },
