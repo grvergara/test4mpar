@@ -16,7 +16,6 @@ The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
 ## My Notes.
 
-
 First, install aws-cli on your laptop, then cdk-cli with npm. 
 
 Create a new directory and initialize a CDK project:
@@ -46,9 +45,9 @@ https://epu8pa0gh3.execute-api.us-west-2.amazonaws.com/prod/
 
 # Why SSM ? 
 SSM parameter manager seems to me a good solution, considering elapse time to set a
-new value - about 3 seconds on my trials - and (almost) inmediate refresh.
+new value - about 3 seconds on my trials - and (almost) immediate refresh.
 
-With SSM, at zero cost you can store up to 10K parameter per region with a max lenght
+With SSM, at zero cost you can store up to 10K parameters per region with a max lenght
 of 4K characters. 
 
 ## Other options ?
@@ -59,4 +58,9 @@ and by whom. Another advantage of this option comparing to SSM, it is the potent
 improvement by decreasing the time involved to set the parameter value from the base
 case of about 3 seconds.
 
-The downside of this option would be the developing time, operational and risk cost. 
+The downside of this option would be the development time, operational costs, and associated risks. 
+
+# Improve this solution (If I had more time)
+The first extension I would build, is an endpoint to update the parameter value. It must have
+an auth mechanism. 
+Other nice extension would be log access and message displayed. Feed this data to a Grafana dashboard.
