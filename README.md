@@ -41,7 +41,6 @@ After editing, it must be transpiled to JavaScript before deployment.
 
 Then, you can deploy it again with cdk deploy command at project root directory.
 
-
 This is deployed on AWS. You can find it at the following URL: 
 https://epu8pa0gh3.execute-api.us-west-2.amazonaws.com/prod/
 
@@ -49,10 +48,15 @@ https://epu8pa0gh3.execute-api.us-west-2.amazonaws.com/prod/
 SSM parameter manager seems to me a good solution, considering elapse time to set a
 new value - about 3 seconds on my trials - and (almost) inmediate refresh.
 
-## Other options ?
-The parameter could be stored in some database like PostgreSQL on RDS or DynamoDB, 
-but this would be an overkill and create new and unnecesary cost.
 With SSM, at zero cost you can store up to 10K parameter per region with a max lenght
 of 4K characters. 
 
-So SSM Parameter Manager is in this case the best option to me. 
+## Other options ?
+The parameter could be stored in some database like PostgreSQL on RDS or DynamoDB.
+The upside of this option is you can build a fully parameter management system,
+enable parameter versioning, by storing past values and metadata like date of edit
+and by whom. Another advantage of this option comparing to SSM, it is the potential
+improvement by decreasing the time involved to set the parameter value from the base
+case of about 3 seconds.
+
+The downside of this option would be the developing time, operational and risk cost. 
